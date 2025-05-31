@@ -2,22 +2,22 @@
 
 ## Proje Hakkında
 
-Bu projede, bir bireyin diyabet hastası olup olmadığını sağlık verilerine bakarak tahmin etmeyi amaçladım. Büyük veri teknolojisi olan Apache Spark'ı kullanarak modelleme yaptım. Veri seti görece küçük olsa da Spark’ın paralel işlem avantajlarından faydalanarak işlemleri daha hızlı ve modüler hale getirdim. Proje sürecinde veriyi temizledim, analiz ettim ve basit bir makine öğrenmesi modeli kurarak sonuçları değerlendirdim.
+Bu projede sağlık verileri kullanılarak bireylerin diyabet hastası olup olmadığı tahmin edilmiştir. Modelleme sürecinde Apache Spark tercih edilmiştir.
 
 ## Kullanılan Teknolojiler
 
-- **Apache Spark (PySpark)**: Veri işleme ve modelleme
-- **Google Colab**: Spark kurulumu ve çalışma ortamı
-- **Pandas, Seaborn, Matplotlib**: Görselleştirme ve analiz
-- **scikit-learn**: Model değerlendirme metrikleri
+- Apache Spark (PySpark)
+- Google Colab
+- Pandas, Seaborn, Matplotlib
+- scikit-learn
 
 ## Veri Seti
 
-- **Kaynak**: diabetes.csv
-- **Gözlem Sayısı**: 768
-- **Hedef Değişken**: `Outcome` (0 = Diyabet yok, 1 = Diyabet var)
+- Dosya: diabetes.csv  
+- Gözlem sayısı: 768  
+- Hedef değişken: Outcome (0: Hasta değil, 1: Hasta)
 
-### Değişkenler:
+## Değişkenler
 
 | Sütun | Açıklama |
 |-------|----------|
@@ -29,35 +29,23 @@ Bu projede, bir bireyin diyabet hastası olup olmadığını sağlık verilerine
 | BMI | Vücut kitle indeksi |
 | DiabetesPedigreeFunction | Genetik risk skoru |
 | Age | Yaş |
-| Outcome | Hedef değişken |
+| Outcome | Diyabet durumu |
 
 ## Veri Ön İşleme
 
-Veri setinde bazı tıbben geçersiz 0 değerleri vardı (örneğin Glucose, BMI gibi). Bu değerleri eksik veri olarak kabul edip, ilgili sütunun ortalama değeriyle doldurdum. Bu sayede modelin öğrenmesini olumsuz etkileyebilecek eksiklikleri giderdim.
+Tıbben geçersiz olan sıfır değerler eksik veri kabul edilmiştir. İlgili sütunların ortalama değerleriyle doldurma işlemi yapılmıştır.
 
-## Keşifsel Veri Analizi (EDA)
+## Veri Analizi
 
-Veriyi tanımak için bazı temel grafikler kullandım:
-
-- **Sınıf Dağılımı**: Diyabet olan ve olmayan bireylerin sayısı.
-- **Korelasyon Matrisi**: Hangi değişkenlerin hedef değişkenle daha çok ilişkili olduğunu görmek için.
-- **Boxplot**: Özelliklerin Outcome=0 ve Outcome=1 için dağılımını inceledim.
-
-Bu adımlar modelleme öncesi veri hakkında fikir sahibi olmamı sağladı.
-
-## Özellik Vektörü Oluşturma
-
-Spark’ta makine öğrenmesi için tüm değişkenleri tek bir `features` vektörüne dönüştürmek gerekiyor. Bu işlem için `VectorAssembler` kullandım.
+Veri dağılımı, korelasyon matrisi ve boxplot grafiklerle analiz edilmiştir. Değişkenlerin hedefle ilişkisi incelenmiştir.
 
 ## Modelleme
 
-- **Model**: Logistic Regression
-- **Veri Bölme**: Veriyi %80 eğitim, %20 test olarak ayırdım.
-- Modeli eğittikten sonra test verisi üzerinde tahmin yaptım ve başarıyı ölçtüm.
+- Logistic Regression modeli kullanılmıştır.
+- Veri %80 eğitim, %20 test olarak ayrılmıştır.
+- Özellikler `VectorAssembler` ile birleştirilmiştir.
 
-## Değerlendirme Metrikleri
-
-Modelin performansını şu metriklerle değerlendirdim:
+## Değerlendirme
 
 | Metrik | Değer |
 |--------|-------|
@@ -79,5 +67,5 @@ Modelin performansını şu metriklerle değerlendirdim:
 
 ## Sonuç
 
-Veri temizleme, analiz ve modelleme sürecini Apache Spark ile yürüttüm. Logistic Regression ile sonuçlar elde ettim (ROC AUC ≈ 0.83). 
+Apache Spark ile verimli ve ölçeklenebilir bir modelleme süreci uygulanmıştır. Logistic Regression modeli ile tatmin edici sonuçlar elde edilmiştir.
 
