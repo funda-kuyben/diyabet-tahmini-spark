@@ -1,12 +1,12 @@
 # Diyabet Hastalığı Tahmini - Apache Spark ile Büyük Veri Analitiği
 
-## 📌 Proje Tanımı
+## Proje Tanımı
 
 Bu projede, sağlık verileri kullanılarak bireylerin diyabet hastalığına sahip olup olmadığı makine öğrenmesi ile tahmin edilmiştir. Büyük veri analizinde yaygın olarak kullanılan Apache Spark teknolojisi ile veri işleme, analiz ve modelleme süreçleri gerçekleştirilmiştir. Amaç; Spark'ın dağıtık ve hızlı işlem yeteneklerinden faydalanarak doğruluğu yüksek, tekrar edilebilir ve ölçeklenebilir bir tahmin modeli oluşturmaktır.
 
 ---
 
-## 🛠️ Kullanılan Teknolojiler
+## Kullanılan Teknolojiler
 
 - Apache Spark (PySpark)
 - Google Colab
@@ -17,7 +17,7 @@ Bu projede, sağlık verileri kullanılarak bireylerin diyabet hastalığına sa
 
 ---
 
-## 📁 Veri Kümesi
+## Veri Kümesi
 
 - **Kaynak**: Pima Indians Diabetes Dataset (Kaggle)
 - **Dosya**: `diabetes.csv`
@@ -38,7 +38,7 @@ Bu projede, sağlık verileri kullanılarak bireylerin diyabet hastalığına sa
 
 ---
 
-## 🔍 Veri Ön İşleme
+## Veri Ön İşleme
 
 - Tıbben geçerli olmayan (0) değerler eksik veri olarak değerlendirilmiştir.
 - Bu değerler, ilgili sütunların ortalamalarıyla doldurulmuştur.
@@ -46,7 +46,7 @@ Bu projede, sağlık verileri kullanılarak bireylerin diyabet hastalığına sa
 
 ---
 
-## 📊 Keşifsel Veri Analizi (EDA)
+## Keşifsel Veri Analizi (EDA)
 
 - `Outcome` değişkeninin dağılımı incelenmiştir.
 - Korelasyon matrisi çıkarılarak hedef değişken ile ilişkiler analiz edilmiştir.
@@ -54,7 +54,7 @@ Bu projede, sağlık verileri kullanılarak bireylerin diyabet hastalığına sa
 
 ---
 
-## 🤖 Modelleme Süreci
+## Modelleme Süreci
 
 ### Özellik Dönüşümü
 - `VectorAssembler` ile bağımsız değişkenler vektör haline getirildi.
@@ -67,7 +67,7 @@ Bu projede, sağlık verileri kullanılarak bireylerin diyabet hastalığına sa
 
 ---
 
-## 📈 Performans Değerlendirmesi
+## Performans Değerlendirmesi
 
 | Metrik | Değer |
 |--------|-------|
@@ -82,7 +82,7 @@ Bu projede, sağlık verileri kullanılarak bireylerin diyabet hastalığına sa
 [15 31]]
 
 
-## ⚙️ Apache Spark Tercih Sebebi
+##  Apache Spark Tercih Sebebi
 
 - **Paralel ve hızlı işlem yapısı** sayesinde büyük veri analizinde verimlidir.
 - **MLlib kütüphanesi** ile entegre makine öğrenmesi sunar.
