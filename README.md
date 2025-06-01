@@ -90,6 +90,6 @@ Bu projede, sağlık verileri kullanılarak bireylerin diyabet hastalığına sa
 
 ---
 
-## ✅ Sonuç
+## Sonuç
 
 Proje kapsamında Apache Spark kullanılarak veri temizleme, analiz ve tahmin süreçleri başarıyla yürütülmüştür. Logistic Regression modeliyle %83 AUC skoru elde edilmiştir. Bu sonuçlar, Spark’ın büyük veri ortamlarında makine öğrenmesi uygulamaları için etkili ve ölçeklenebilir bir çözüm sunduğunu göstermektedir.
